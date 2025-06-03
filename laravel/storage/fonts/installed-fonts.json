@@ -1,0 +1,19 @@
+{
+    "font awesome 6 brands": {
+        "normal": "font_awesome_6_brands_normal_988693f82ecd5fb5943f5d660ee275d9"
+    },
+    "font awesome 6 free": {
+        "normal": "\/home\/u486032009\/domains\/mediumaquamarine-gnat-166914.hostingersite.com\/laravel\/storage\/fonts\/font_awesome_6_free_normal_84a4c97d4a86d09bb48ef246a72322cb",
+        "900": "font_awesome_6_free_900_ca05ec5c959c646a3640739ca69675f5"
+    },
+    "font awesome 5 brands": {
+        "normal": "font_awesome_5_brands_normal_988693f82ecd5fb5943f5d660ee275d9"
+    },
+    "font awesome 5 free": {
+        "900": "\/home\/u486032009\/domains\/mediumaquamarine-gnat-166914.hostingersite.com\/laravel\/storage\/fonts\/font_awesome_5_free_900_ca05ec5c959c646a3640739ca69675f5",
+        "normal": "font_awesome_5_free_normal_84a4c97d4a86d09bb48ef246a72322cb"
+    },
+    "fontawesome": {
+        "normal": "fontawesome_normal_333138fd78fea14f8cb3a9f8ac656f0e"
+    }
+}
