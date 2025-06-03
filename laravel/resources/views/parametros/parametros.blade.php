@@ -72,7 +72,7 @@
                                 No se ha encontrado ningún resultado para su búsqueda.
                             </div>
                         @else
-                            <table class="table-responsive table-bordered">
+                            <table class="table table-responsive table-bordered">
                                 <thead>
                                     <tr>
                                         <th style="text-align:center; width: 23%;">

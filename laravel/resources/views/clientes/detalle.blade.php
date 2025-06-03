@@ -19,7 +19,7 @@
                     <div class="card-header">
                         Información del Cliente
                     </div>
-                    <div class="card-body">
+                    <div class="card-body table-responsive ">
                         <table class="table table-bordered table-striped">
                             <thead>
                                 <tr>
@@ -48,7 +48,7 @@
                     <div class="card-header">
                         Sucursales Asociadas
                     </div>
-                    <div class="card-body">
+                    <div class="card-body table-responsive ">
                         @if($cliente->sucursal->isEmpty())
                         <p>No hay sucursales asociadas.</p>
                         @else

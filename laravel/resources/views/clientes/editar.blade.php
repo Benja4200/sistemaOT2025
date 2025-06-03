@@ -105,7 +105,7 @@
                                 Cliente sin sucursales.
                             </div>
                         @else
-                            <table class="table table-bordered mt-3">
+                            <table class="table table-bordered mt-3 table-responsive">
                                 <thead>
                                     <tr>
                                         <th>ID</th>

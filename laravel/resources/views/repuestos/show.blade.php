@@ -10,7 +10,7 @@
                 </a>
             </div>
     
-            <table class="table table-striped">
+            <table class="table table-striped table-responsive">
                 <thead>
                     <tr>
                         <th onclick="sortTable(0)">Id</th>
@@ -33,7 +33,7 @@
                 <div class="card-header">
                     Modelos Relacionados
                 </div>
-                <div class="card-body">
+                <div class="card-body table-responsive ">
                     @if($repuestozzz->modelos->isEmpty())
                         <p>No tiene modelos asignados.</p>
                     @else

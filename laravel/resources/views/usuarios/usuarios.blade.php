@@ -6,56 +6,57 @@
     <div class="container-fluid">
         <div class="d-flex justify-content-between align-items-center text-center mt-3">
             <h2>Usuarios</h2>
-            <div class="d-flex align-items-center" style="gap: 5px;">
+            <div class="d-flex align-items-center flex-wrap" style="gap: 5px;"> {{-- Agregado flex-wrap --}}
                 <a href="{{ route('usuarios.create') }}" class="btn btn-primary ms-auto"
                     style="background-color: #cc6633; border-color: #cc6633;">
                     <i class="bi bi-plus"></i> Agregar
                 </a>
                 
-                <a href="{{ route('usuarios.index') }}" class="btn btn-primary d-flex align-items-center" style="background-color: #cc6633; border-color: #cc6633; gap: 3px; width: 150px;">
+                <a href="{{ route('usuarios.index') }}" class="btn btn-primary d-flex align-items-center justify-content-center" style="background-color: #cc6633; border-color: #cc6633; gap: 3px; flex-grow: 1; max-width: 150px;"> {{-- flex-grow, justify-content-center y max-width --}}
                     <i class="fa-sharp fa-solid fa-filter-circle-xmark"></i> Eliminar Filtro
                 </a>
                 
             </div>
         </div>
 
-        {{-- INICIO: Formulario para el número de registros por página --}}
-        <div class="d-flex justify-content-start align-items-center mt-3 mb-3">
-            <form action="{{ route('usuarios.index') }}"
-                  method="get" id="usersPerPageForm" class="d-flex align-items-center">
-                <div class="form-group d-flex align-items-center me-3">
-                    <label for="perPage" class="me-2 mb-0 text-nowrap">Mostrar </label>
-                    <input type="number" name="perPage" id="perPage"
-                           class="form-control form-control-sm text-center"
-                           value="{{ request()->input('perPage', 10) }}" min="1" style="width: 70px;"
-                           onchange="this.form.submit()">
-                    <label class="ms-2 mb-0 text-nowrap"> registros </label>
-                </div>
-                {{-- Input oculto para mantener el término de búsqueda al cambiar perPage --}}
-                @if(request('search'))
-                    <input type="hidden" name="search" value="{{ request('search') }}">
-                @endif
-            </form>
+        {{-- INICIO: Contenedor para formularios de registros por página y búsqueda --}}
+        <div class="row mt-3">
+            {{-- Columna para el formulario de registros por página --}}
+            <div class="col-12 col-md-6 mb-3">
+                <form action="{{ route('usuarios.index') }}"
+                      method="get" id="usersPerPageForm" class="d-flex align-items-center flex-wrap"> {{-- Agregado flex-wrap --}}
+                    <div class="form-group d-flex align-items-center me-3 mb-2"> {{-- Agregado mb-2 --}}
+                        <label for="perPage" class="me-2 mb-0">Mostrar </label> {{-- Quitado text-nowrap --}}
+                        <input type="number" name="perPage" id="perPage"
+                               class="form-control form-control-sm text-center"
+                               value="{{ request()->input('perPage', 10) }}" min="1" style="width: 70px;"
+                               onchange="this.form.submit()">
+                        <label class="ms-2 mb-0"> registros </label> {{-- Quitado text-nowrap --}}
+                    </div>
+                    @if(request('search'))
+                        <input type="hidden" name="search" value="{{ request('search') }}">
+                    @endif
+                </form>
+            </div>
+
+            {{-- Columna para el formulario de búsqueda --}}
+            <div class="col-12 col-md-6 mb-3">
+                <form action="{{ route('usuarios.buscar') }}" method="get" class="d-flex flex-column flex-md-row align-items-stretch" style="gap: 5px;"> {{-- flex-column, flex-md-row, align-items-stretch --}}
+                    <input type="text" name="search" id="search" class="form-control mb-2 mb-md-0" {{-- mb-2 mb-md-0 --}}
+                           style="border-color: #cc6633;"
+                           placeholder="Buscar por nombre, correo, roles..."
+                           value="{{ request('search') }}">
+                    <button type="submit" class="btn btn-primary d-flex align-items-center justify-content-center" style="background-color: #cc6633; border-color: #cc6633; flex-grow: 1;"> {{-- justify-content-center, flex-grow: 1 --}}
+                        <i class="fa-solid fa-magnifying-glass"></i> Buscar
+                    </button>
+                    @if(request('perPage'))
+                        <input type="hidden" name="perPage" value="{{ request('perPage') }}">
+                    @endif
+                </form>
+            </div>
         </div>
-        {{-- FIN: Formulario para el número de registros por página --}}
+        {{-- FIN: Contenedor para formularios de registros por página y búsqueda --}}
 
-        {{-- Formulario de Búsqueda --}}
-        <form action="{{ route('usuarios.buscar') }}" method="get" class="input-group mt-3">
-            <input type="text" name="search" id="search" class="form-control"
-                   style="border-color: #cc6633; margin-right: 4px;"
-                   placeholder="Buscar por nombre, correo, roles..."
-                   value="{{ request('search') }}"> {{-- Mantener el valor de búsqueda --}}
-            <button type="submit" class="btn btn-primary ml-1"
-                    style="background-color: #cc6633; border-color: #cc6633;">
-                <i class="fa-solid fa-magnifying-glass"></i> Buscar
-            </button>
-            {{-- Input oculto para mantener el número de registros por página al buscar --}}
-            @if(request('perPage'))
-                <input type="hidden" name="perPage" value="{{ request('perPage') }}">
-            @endif
-        </form>
-
-        <!-- Tabla de usuarios -->
         <div class="table-responsive mt-2">
             <table class="table table-bordered table-striped text-center shadow sortable-table" style="width: 100%;" >
                 <thead class="table-primary">
@@ -84,23 +85,11 @@
                             </td>
 
                             <td>
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <!-- <form action="{{ route('tecnicos.create', $user->id) }}" method="GET" style="margin-right: 10px;">
-                                        <button type="submit" class="btn btn-success" style="background-color: #28a745; border-color: #28a745;">
-                                            <i class="fas fa-plus"></i> Agregar Técnico
-                                        </button>
-                                    </form> -->
+                                <div class="d-flex justify-content-center flex-wrap" style="gap: 5px;"> {{-- flex-wrap para los botones de acción --}}
+                                    <a href="{{ route('usuarios.edit', $user->id) }}" class="btn btn-primary" style="background-color: #cc6633; border-color: #cc6633;">
+                                        <i class="fas fa-edit"></i> Editar
+                                    </a>
 
-                                    <!-- Botón Editar -->
-                                    <form action="{{ route('usuarios.edit', $user->id) }}" method="GET"
-                                        style="margin-right: 10px;">
-                                        <!-- Botón Editar -->
-                                        <a href="{{ route('usuarios.edit', $user->id) }}" class="btn btn-primary" style="background-color: #cc6633; border-color: #cc6633;">
-                                            <i class="fas fa-edit"></i> Editar
-                                        </a>
-
-                                    </form>
-                                    <!-- Botón Eliminar -->
                                     <form action="{{ route('usuarios.destroy', $user->id) }}" method="POST"
                                         class="delete-form"
                                         style="display: inline;">

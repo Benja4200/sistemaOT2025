@@ -16,56 +16,57 @@
             </div>
         </div>
 
-        <!-- Formulario para seleccionar la opción de visualizacion -->
-        <div class="d-flex justify-content-between align-items-center mt-3">
+        <div class="row mt-3">
+            {{-- Columna para "Mostrar X registros" y Radio Buttons --}}
+            <div class="col-12 col-md-6 mb-3">
+                <form action="{{ route('ordenes.index') }}" method="get" id="ordenesForm" class="d-flex flex-wrap align-items-center">
+                    <div class="form-group d-flex align-items-center me-3 mb-2">
+                        <label for="perPage" class="me-2 mb-0">Mostrar </label>
+                        <input type="number" name="perPage" id="perPage"
+                               class="form-control form-control-sm text-center"
+                               value="{{ request('perPage', 10) }}" min="1" style="width: 70px;"
+                               onchange="this.form.submit()">
+                        <label class="ms-2 mb-0"> registros </label>
+                    </div>
 
-            <form class="" action="{{ route('ordenes.index') }}" method="get" class="input-group" id="ordenesForm">
+                    <div class="d-flex flex-wrap">
+                        <div class="form-check form-check-inline mb-2">
+                            <input class="form-check-input" type="radio" name="show_all" value="false"
+                                {{ $vistaSeleccionada == 'asignadas' ? 'checked' : '' }}
+                                {{ isset($tecnico) ? '' : 'disabled' }}
+                                onchange="this.form.submit()">
+                            <label class="form-check-label">Órdenes asignadas</label>
+                        </div>
 
-    <div class="form-group d-flex align-items-center me-3">
-        <label for="perPage" class="me-2 mb-0 text-nowrap">Mostrar </label>
-        <input type="number" name="perPage" id="perPage"
-               class="form-control form-control-sm text-center"
-               value="{{ request('perPage', 10) }}" min="1" style="width: 70px;"
-               onchange="this.form.submit()">
-        <label class="ms-2 mb-0 text-nowrap"> registros </label>
-    </div>
+                        <div class="form-check form-check-inline mb-2">
+                            <input class="form-check-input" type="radio" name="show_all" value="true"
+                                {{ $vistaSeleccionada == 'todas' ? 'checked' : '' }}
+                                {{ $puedeCambiarVista ? '' : 'disabled' }}
+                                onchange="this.form.submit()">
+                            <label class="form-check-label">Todas las órdenes</label>
+                        </div>
+                    </div>
+                    <input type="hidden" name="search" value="{{ request('search') }}">
+                </form>
+            </div>
 
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="show_all" value="false"
-            {{ $vistaSeleccionada == 'asignadas' ? 'checked' : '' }}
-            {{ isset($tecnico) ? '' : 'disabled' }}
-            onchange="this.form.submit()">
-        <label class="form-check-label">Ordenes asignadas</label>
-    </div>
+            {{-- Columna para el formulario de búsqueda y botón de eliminar filtro --}}
+            <div class="col-12 col-md-6 mb-3">
+                <form action="{{ route('ordenes.buscar') }}" method="get" class="d-flex flex-column flex-md-row align-items-stretch" style="gap: 5px;">
+                    <input type="hidden" name="show_all" value="{{ request()->input('show_all', 'false') }}">
+                    <input type="hidden" name="perPage" value="{{ request('perPage', 10) }}">
 
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="show_all" value="true"
-            {{ $vistaSeleccionada == 'todas' ? 'checked' : '' }}
-            {{ $puedeCambiarVista ? '' : 'disabled' }}
-            onchange="this.form.submit()">
-        <label class="form-check-label">Todas las ordenes</label>
-    </div>
+                    <input type="text" name="search" id="search" class="form-control mb-2 mb-md-0" placeholder="Buscar por número de orden" value="{{ request()->input('search') }}" style="border-color: #cc6633;">
 
-    {{-- Add this hidden input to preserve the search query --}}
-    <input type="hidden" name="search" value="{{ request('search') }}">
-</form>
-                    
-            <form action="{{ route('ordenes.buscar') }}" method="get" class="d-flex align-items-center w-100" style="gap: 3px;">
+                    <button type="submit" class="btn btn-primary d-flex align-items-center justify-content-center" style="background-color: #cc6633; border-color: #cc6633; gap: px; flex-grow: 1;">
+                        <i class="fa-solid fa-magnifying-glass"></i>Buscar
+                    </button>
 
-                <!-- filtro de puntos -->
-                <input type="hidden" name="show_all" value="{{ request()->input('show_all', 'false') }}">
-
-                 <input type="hidden" name="perPage" value="{{ request('perPage', 10) }}">
-
-                <input type="text" name="search" id="search" class="form-control" placeholder="Buscar por numero orden" value="{{ request()->input('search') }}" style="border-color: #cc6633; margin-right: 4px;">
-
-                <button type="submit" class="btn btn-primary" style="display: flex; gap: 3px; align-items: center; background-color: #cc6633; border-color: #cc6633; margin-right: 5px;"><i class="fa-solid fa-magnifying-glass"></i>Buscar</button>
-
-                <a href="{{ route('ordenes.index') }}" class="btn btn-primary d-flex align-items-center" style="background-color: #cc6633; border-color: #cc6633; gap: 3px; width: 181px;">
-                    <i class="fa-sharp fa-solid fa-filter-circle-xmark"></i> Eliminar Filtro
-                </a>
-            </form>
-
+                    <a href="{{ route('ordenes.index') }}" class="btn btn-primary d-flex align-items-center justify-content-center" style="background-color: #cc6633; border-color: #cc6633; gap: 3px; flex-grow: 1;">
+                        <i class="fa-sharp fa-solid fa-filter-circle-xmark"></i> Eliminar Filtro
+                    </a>
+                </form>
+            </div>
         </div>
         
         <div class="table-responsive mt-3" style="min-height:300px">

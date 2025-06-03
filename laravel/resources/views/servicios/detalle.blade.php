@@ -20,7 +20,7 @@
                     <div class="card-header">
                         Información del Servicio
                     </div>
-                    <div class="card-body">
+                    <div class="card-body table-responsive">
                         <table class="table table-bordered table-striped">
                             <thead>
                                 <tr>
@@ -44,7 +44,7 @@
                     <div class="card-header">
                         Información de la sublinea del servicio
                     </div>
-                    <div class="card-body">
+                    <div class="card-body table-responsive">
                         <table class="table table-bordered table-striped">
                             <thead>
                                 <tr>

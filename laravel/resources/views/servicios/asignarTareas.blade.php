@@ -70,7 +70,7 @@
                                 <div class="card-header">
                                     Tareas Asignadas
                                 </div>
-                                <div class="card-body">
+                                <div class="card-body table-responsive">
                                     @if ($servicio->tareasServicio->isEmpty())
                                     <p>No hay tareas asociadas a este servicio.</p>
                                     @else

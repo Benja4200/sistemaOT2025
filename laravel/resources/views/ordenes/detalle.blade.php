@@ -183,8 +183,8 @@
 
                         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                             data-parent="#accordionExample">
-                            <div class="card-body">
-                                <table class="table table-bordered">
+                            <div class="card-body table-responsive">
+                                <table class="table table-bordered table-responsive">
                                     <thead>
                                         <tr>
                                             <th scope="col">Tarea</th>

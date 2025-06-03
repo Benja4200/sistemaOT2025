@@ -76,7 +76,7 @@
                     <div class="card-header">
                         Repuestos Relacionados
                     </div>
-                    <div class="card-body">
+                    <div class="card-body table-responsive">
                         @if ($repuestosAsignados->isEmpty())
                         <p>No hay repuestos relacionados con este modelo.</p>
                         @else

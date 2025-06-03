@@ -32,7 +32,7 @@
                         <div class="card-header">
                             Información del Técnico
                         </div>
-                        <div class="card-body">
+                        <div class="card-body table-responsive">
                             <table class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
@@ -62,7 +62,7 @@
                             <div class="card-header">
                                 Información del Usuario Asociado
                             </div>
-                            <div class="card-body">
+                            <div class="card-body table-responsive">
                                 <table class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
