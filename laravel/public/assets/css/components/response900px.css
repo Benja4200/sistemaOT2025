@@ -1,0 +1,10 @@
+/* Aplica los estilos solo cuando la altura de la pantalla sea menor o igual a 900px */
+@media (max-height: 900px) {
+    .dakjwhdx {
+        display: flex;
+        position: absolute;
+        left: 0;
+        margin-top: 20px;
+        margin-left: 10px;
+    }
+}

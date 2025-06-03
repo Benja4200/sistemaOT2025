@@ -1,0 +1,60 @@
+.dispositivos{
+    text-align: center;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    margin: 15px 0px;
+    border-style: inset;
+    /* border-color: #CC0066; */
+    color: black;
+    /* max-width: 80%; */
+}
+
+.inputsText{
+    background-color: transparent !important;
+    border-color: transparent;
+    border-bottom: 1px dotted;
+    margin-bottom:20px;
+}
+
+.infoExtra{
+    text-align: end;
+}
+
+.infoEx{
+    padding: 5px;
+    background-color: black;
+    color: white;
+    border-radius: 100px;
+    cursor:help;
+}
+
+.prioridadBaja{
+    background-color: #4caf50 ;
+    color:white;
+}
+
+.prioridadMedia{
+    background-color: #ffeb3b;
+    color:black;
+}
+
+.prioridadAlta{
+    background-color: #FF0000;
+    color:white;
+}
+
+.estadoIniciada{
+    background-color: #4caf50 ;
+    color:white;
+}
+
+.estadoPendiente{
+    background-color: #ffeb3b;
+    color:black;
+}
+
+.estadoFinalizada{
+    background-color: #9e9e9e;
+    color:white;
+}

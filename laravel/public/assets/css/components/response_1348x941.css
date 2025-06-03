@@ -1,0 +1,21 @@
+.selector-container-zelgaria {
+    display: flex;
+    padding: 10px;
+    border: 1px solid #7700ff;
+    background-color: #CC0066;
+    gap: 3px;
+    transition: width 0.3s ease;
+}
+.selector-container-zelgaria button {
+    padding: 12px;
+}
+.weadiv1, .weadiv2 {
+    background-color: #333333;
+    border: 1px solid #ff0000;
+    border-radius: 5px;
+}
+.weadiv1 {
+    padding-top: 4px;
+}
+.weadiv2 {
+}

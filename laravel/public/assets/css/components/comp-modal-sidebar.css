@@ -1,0 +1,34 @@
+/* assets/css/components/comp-modal-sidebar.css */
+
+.sidebar {
+    position: fixed; /* Position relative to the viewport */
+    top: 0;
+    left: -300px; /* Start off-screen to the left */
+    width: 250px; /* Adjust width as needed */
+    height: 100%;
+    background-color: #333333; /* Your current sidebar background */
+    overflow-y: auto; /* Enable scrolling if content exceeds height */
+    transition: left 0.3s ease-in-out; /* Smooth transition for showing/hiding */
+    z-index: 1050; /* Ensure it's above other content (Bootstrap modals often use 1050) */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Optional: add a shadow */
+}
+
+.sidebar.open {
+    left: 0; /* Move to on-screen when open */
+}
+
+/* Optional: Overlay background to dim the main content */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 1040; /* Below the sidebar but above other content */
+    display: none; /* Hidden by default */
+}
+
+.overlay.active {
+    display: block; /* Show when sidebar is open */
+}

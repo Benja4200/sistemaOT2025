@@ -1,0 +1,124 @@
+/* =================================
+   Botones Personalizados
+================================= */
+
+/* Botón Información Personalizado */
+.btn-custom-info {
+    background-color: var(--color-info);
+    border: 1px solid var(--color-info);
+    color: var(--color-autofill-text);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-custom-info:hover {
+    background-color: var(--color-info-hover);
+    border-color: var(--color-info-hover);
+    color: var(--color-autofill-text);
+}
+
+/* Botón Primario Personalizado */
+.btn-custom-primary {
+    background-color: var(--color-principal);
+    border: 1px solid var(--color-principal);
+    color: var(--color-autofill-text);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-custom-primary:hover {
+    background-color: var(--color-principal-hover);
+    border-color: var(--color-principal-hover);
+    color: var(--color-autofill-text);
+}
+
+/* Botón de Advertencia Personalizado */
+.btn-custom-warning {
+    background-color: var(--color-boton);
+    border: 1px solid var(--color-boton);
+    color: var(--color-autofill-text);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-custom-warning:hover {
+    background-color: var(--color-boton-hover);
+    border-color: var(--color-boton-hover);
+    color: var(--color-autofill-text);
+}
+
+/* Botón de Eliminación Personalizado */
+.btn-custom-danger {
+    background-color: #dc3545;
+    border: 1px solid #dc3545;
+    color: var(--color-autofill-text);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-custom-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+    color: var(--color-autofill-text);
+}
+
+/* Acomodar Iconos y Texto en los Botones */
+.btn-custom-info i,
+.btn-custom-primary i,
+.btn-custom-warning i,
+.btn-custom-danger i {
+    margin-right: 5px;
+}
+
+/* =================================
+   Botón General Solo para Botones Sin Clases de Bootstrap
+================================= */
+
+button:not(.btn) {
+    background-color: var(--color-boton);
+    color: var(--color-autofill-text);
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:not(.btn):hover {
+    background-color: var(--color-boton-hover);
+}
+
+button:not(.btn):focus {
+    outline: none;
+}
+
+/* =================================
+   Contenedores de Botones
+================================= */
+
+.action-buttons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}

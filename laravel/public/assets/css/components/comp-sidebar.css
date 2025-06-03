@@ -1,0 +1,121 @@
+/* comp-sidebar.css */
+
+/* Estilo general del sidebar */
+#sidebar {
+    background-color: #333333;
+    width: 215px; /* Ancho del sidebar */
+    /* height: 100vh;  */  /* Altura por defecto del sidebar */
+    flex-shrink: 0; /* Evita que el sidebar se encoja */
+    overflow-y: auto;
+    transition: width 0.3s ease;
+    justify-items: center;
+}
+
+/* Clase para ocultar el sidebar */
+#sidebar.hidden {
+    width: 0; /* Reduce el ancho a 0 para ocultarlo */
+    overflow: hidden; /* Oculta cualquier contenido que quede */
+}
+
+/* Estilo del contenido */
+.content {
+    flex-grow: 1;
+    transition: flex-grow 0.3s ease;
+    /* Sin margin-left, el Flexbox maneja el espacio */
+}
+
+/* Cuando el contenido está expandido (sidebar oculto) */
+.content.expanded {
+    flex-grow: 1; /* Asegura que el contenido ocupe todo el espacio disponible */
+}
+
+/* Lista de navegación */
+#sidebar .navbar-nav {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/* Elementos de la lista */
+#sidebar .nav-item {
+    width: 100%;
+}
+
+/* Enlaces del sidebar */
+#sidebar .nav-link {
+    color: #FFFFFF;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+    margin: 0;
+}
+
+/* Hover en enlaces */
+#sidebar .nav-link:hover {
+    background-color: #666666;
+    border-left: 3px solid #CC0066;
+}
+
+/* Enlace activo */
+#sidebar .nav-link.active {
+    background-color: #666666;
+    border-left: 3px solid #CC0066;
+}
+
+/* Íconos dentro de los enlaces */
+#sidebar .nav-link i {
+    font-size: 18px;
+    margin-right: 10px;
+    color: #CC0066;
+    transition: color 0.3s ease;
+}
+
+/* Texto dentro de los enlaces */
+#sidebar .nav-link span {
+    color: #FFFFFF;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+/* Hover en íconos */
+#sidebar .nav-link:hover i {
+    color: #FFFFFF;
+}
+
+/* Hover en texto */
+#sidebar .nav-link:hover span {
+    color: #FFFFFF;
+}
+
+/* Scroll personalizado */
+#sidebar::-webkit-scrollbar {
+    width: 8px;
+}
+
+#sidebar::-webkit-scrollbar-thumb {
+    background-color: #666666;
+    border-radius: 4px;
+}
+
+#sidebar::-webkit-scrollbar-thumb:hover {
+    background-color: #CC0066;
+}
+
+/* Botón salir */
+#sidebar .nav-link.logout {
+    color: #FFFFFF;
+    font-size: 14px;
+    margin-top: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+#sidebar .nav-link.logout:hover {
+    color: #CC0066;
+}

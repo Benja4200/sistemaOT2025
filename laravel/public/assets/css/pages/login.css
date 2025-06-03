@@ -1,0 +1,149 @@
+/* login.css */
+
+/* Fondo general */
+body.dark-background {
+    background-color: #CCCCCC;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Contenedor principal */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Tarjeta de login */
+.login-card {
+    display: flex;
+    flex-direction: row;
+    background-color: #333333;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+    width: 90%;
+}
+
+/* Imagen lateral */
+.login-image-wrapper {
+    background-color: #333333;
+    width: 40%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 20px;
+}
+
+/* Ajusta la imagen dentro del contenedor   */
+.login-logo {
+    height: auto;
+    width: 100%;
+    position: relative;
+    object-fit: cover;
+}
+
+
+
+/* Área del formulario */
+.login-form-wrapper {
+    padding: 30px;
+    flex: 1;
+    width: 60%;
+}
+
+/* Título */
+.login-form-wrapper h5 {
+    color: #FF9900;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.login-form-wrapper p {
+    color: #CCCCCC;
+    font-size: 14px;
+}
+
+/* Botón de ingreso */
+.login-btn {
+    background-color: #CC6633;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Espaciado del botón */
+.input-field.center-align {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* Hover del botón */
+.login-btn:hover {
+    background-color: #FF9900;
+    color: #FFFFFF;
+}
+
+.input-field input {
+    border-bottom: 2px solid #FF9900 !important;
+    box-shadow: none !important;
+    color: #FFFFFF !important;
+}
+
+.input-field input:focus {
+    border-bottom: 2px solid #FF9900 !important;
+}
+
+.input-field .prefix {
+    color: #FF9900;
+}
+
+/* Mensajes de error */
+.red-text {
+    font-size: 14px;
+    color: #FF9900;
+}
+
+/* Dispositivos pequeños */
+@media (max-width: 768px) {
+    .login-card {
+        flex-direction: column;
+    }
+
+    .login-image-wrapper {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .login-form-wrapper {
+        width: 100%;
+    }
+}
+
+
+/* Mensajes de error */
+.red-text {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+}

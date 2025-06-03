@@ -1,0 +1,28 @@
+
+    /* Cambiar color de los números de la paginación */
+    .pagination .page-link {
+        color: #cc6633;
+    }
+
+    /* Cambiar color del número activo */
+    .pagination .page-item.active .page-link {
+        background-color: #cc6633;
+        border-color: #cc6633;
+        color: #ffffff;
+    }
+
+    /* Cambiar color de los números al pasar el mouse */
+    .pagination .page-link:hover {
+        background-color: #d39a7e;
+        border-color: #d39a7e;
+        color: #ffffff;
+    }
+    /*Cambiar color de los links*/
+    a {
+        color: #CC0066;
+    }
+
+    /* Cambiar color de los links al pasar el mouse */
+    a:hover {
+        color: #cc6633;
+    }

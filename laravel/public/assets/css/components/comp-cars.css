@@ -1,0 +1,77 @@
+/* Estilo personalizado para los encabezados de tarjetas */
+.card-header-custom {
+    background-color: #cc6633;
+    color: white;
+}
+
+/* Opcional: Estilo para el efecto hover o estados activos */
+.card-header-custom:hover {
+    background-color: #b35930;
+}
+
+
+/* Estilos para <details> categorias */
+.categorias-summary-custom {
+    font-size: 1.25rem;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #ffffff;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Estilos para <summary> categorias*/
+.categorias-section summary {
+    transition: background-color 0.3s ease, border 0.3s ease;
+}
+
+
+/* Estilos para <details> subcategorias*/
+.subcategorias-summary {
+    font-size: 1.25rem;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #ffffff;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Estilos para <summary> subcategorias*/
+.subcategorias-section {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+
+/* Estilos para <details> lineas*/
+.lineas-summary {
+    font-size: 1.25rem;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #ffffff;
+    cursor: pointer;
+    width: 100%;
+}
+/* Estilos para <summary> lineas*/
+.lineas-section {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/*Estilos para <summary> sublineas*/
+.sublineas-summary {
+    font-size: 1.25rem;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #ffffff;
+    cursor: pointer;
+    width: 100%;
+}
+
+/*Estilos para <details> sublineas*/
+.sublineas-section {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+

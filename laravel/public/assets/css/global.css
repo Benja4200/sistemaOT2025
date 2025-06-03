@@ -1,0 +1,583 @@
+/* =================================
+   Variables CSS
+================================= */
+:root {
+    /* Colores */
+    --color-principal: #cc6633;
+    --color-principal-hover: #b34d59;
+    --color-segundario: #CC6633;
+    --color-segundario-hover: #b35930;
+    --color-info: #cc0066;
+    --color-info-hover: #b34d59;
+    --color-boton: #FF9900;
+    --color-boton-hover: #e68a00;
+    --color-autofill-bg: #333333;
+    --color-autofill-text: #ffffff;
+    --color-summary-bg: #f7f7f7;
+    --color-summary-border: #ddd;
+}
+
+body{
+    overflow-x:hidden;
+}
+
+#ot_tabledata th {
+    position: relative;
+    /* Añade espacio a la derecha para el icono */
+    padding-right: 25px !important; /* Ajusta según necesidad, !important si Bootstrap interfiere */
+    cursor: pointer; /* Indica que el encabezado es clicable */
+}
+
+/* Estilo base para el pseudo-elemento del icono */
+#ot_tabledata th::after {
+    content: ''; /* Contenido por defecto vacío */
+    position: absolute;
+    top: 50%;
+    right: 8px; /* Posiciona el icono a la derecha */
+    transform: translateY(-50%); /* Centra verticalmente */
+    font-family: "Font Awesome 6 Free"; /* Usa la fuente de Font Awesome */
+    font-weight: 900; /* Para los iconos sólidos de Font Awesome */
+    font-size: 0.8em; /* Tamaño del icono, ajusta si es necesario */
+    opacity: 0.4; /* Hace que el icono por defecto sea semitransparente */
+    transition: opacity 0.2s ease; /* Transición suave al ordenar */
+}
+
+/* Icono para ordenación ascendente */
+#ot_tabledata th.sorted-asc::after {
+    content: "\f0d8"; /* Código Unicode para el icono 'caret-up' de Font Awesome Solid */
+    opacity: 1; /* Icono completamente visible cuando se ordena */
+    color: #333; /* Color del icono ordenado, ajusta si quieres otro color */
+}
+
+/* Icono para ordenación descendente */
+#ot_tabledata th.sorted-desc::after {
+    content: "\f0d7"; /* Código Unicode para el icono 'caret-down' de Font Awesome Solid */
+    opacity: 1; /* Icono completamente visible cuando se ordena */
+     color: #333; /* Color del icono ordenado, ajusta si quieres otro color */
+}
+
+/* Opcional: Icono para columnas no ordenadas, indica que son ordenables */
+#ot_tabledata th:not(.sorted-asc):not(.sorted-desc)::after {
+     content: "\f0dc"; /* Código Unicode para el icono 'sort' (flechas arriba/abajo juntas) */
+     /* opacity: 0.4; -- Ya definido en el estilo base */
+}
+
+/* Opcional: Estilo al pasar el ratón por encabezados ordenables */
+#ot_tabledata th:hover {
+    /* background-color: #f8f9fc; Ajusta color de fondo al pasar el ratón si quieres */
+}
+
+#ot_tabledata th:hover::after {
+    opacity: 0.7; /* Haz el icono un poco más visible al pasar el ratón */
+}
+/* Asegura que el encabezado sea un contexto de posicionamiento */
+#clientes_tabledata th, /* Aplica también a la tabla de clientes */
+#ot_tabledata th { /* Mantén también la de ordenes si la necesitas */
+    position: relative;
+    padding-right: 25px !important;
+    cursor: pointer;
+}
+
+/* Estilo base para el pseudo-elemento del icono */
+#clientes_tabledata th::after,
+#ot_tabledata th::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 0.8em;
+    opacity: 0.4;
+    transition: opacity 0.2s ease;
+}
+
+/* Icono para ordenación ascendente */
+#clientes_tabledata th.sorted-asc::after,
+#ot_tabledata th.sorted-asc::after {
+    content: "\f0d8"; /* Icono 'caret-up' de Font Awesome Solid */
+    opacity: 1;
+    color: #333;
+}
+
+/* Icono para ordenación descendente */
+#clientes_tabledata th.sorted-desc::after,
+#ot_tabledata th.sorted-desc::after {
+    content: "\f0d7"; /* Icono 'caret-down' de Font Awesome Solid */
+    opacity: 1;
+    color: #333;
+}
+
+/* Opcional: Icono para columnas no ordenadas, indica que son ordenables */
+#clientes_tabledata th:not(.sorted-asc):not(.sorted-desc)::after,
+#ot_tabledata th:not(.sorted-asc):not(.sorted-desc)::after {
+    content: "\f0dc"; /* Icono 'sort' (flechas arriba/abajo juntas) */
+    /* opacity: 0.4; -- Ya definido en el estilo base */
+}
+
+/* Opcional: Estilo al pasar el ratón por encabezados ordenables */
+#clientes_tabledata th:hover,
+#ot_tabledata th:hover {
+    /* background-color: #f8f9fc; */
+}
+
+#clientes_tabledata th:hover::after,
+#ot_tabledata th:hover::after {
+    opacity: 0.7;
+}
+/* Asegura que el encabezado sea un contexto de posicionamiento */
+#ot_tabledata th,
+#clientes_tabledata th,
+#sucursales_tabledata th { /* ¡Añade esta línea! */
+    position: relative;
+    padding-right: 25px !important;
+    cursor: pointer;
+}
+
+/* Estilo base para el pseudo-elemento del icono */
+#ot_tabledata th::after,
+#clientes_tabledata th::after,
+#sucursales_tabledata th::after { /* ¡Añade esta línea! */
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 0.8em;
+    opacity: 0.4;
+    transition: opacity 0.2s ease;
+}
+
+/* Icono para ordenación ascendente */
+#ot_tabledata th.sorted-asc::after,
+#clientes_tabledata th.sorted-asc::after,
+#sucursales_tabledata th.sorted-asc::after { /* ¡Añade esta línea! */
+    content: "\f0d8"; /* Icono 'caret-up' de Font Awesome Solid */
+    opacity: 1;
+    color: #333;
+}
+
+/* Icono para ordenación descendente */
+#ot_tabledata th.sorted-desc::after,
+#clientes_tabledata th.sorted-desc::after,
+#sucursales_tabledata th.sorted-desc::after { /* ¡Añade esta línea! */
+    content: "\f0d7"; /* Icono 'caret-down' de Font Awesome Solid */
+    opacity: 1;
+    color: #333;
+}
+
+/* Opcional: Icono para columnas no ordenadas, indica que son ordenables */
+#ot_tabledata th:not(.sorted-asc):not(.sorted-desc)::after,
+#clientes_tabledata th:not(.sorted-asc):not(.sorted-desc)::after,
+#sucursales_tabledata th:not(.sorted-asc):not(.sorted-desc)::after { /* ¡Añade esta línea! */
+    content: "\f0dc"; /* Icono 'sort' (flechas arriba/abajo juntas) */
+}
+
+/* Opcional: Estilo al pasar el ratón por encabezados ordenables */
+#ot_tabledata th:hover,
+#clientes_tabledata th:hover,
+#sucursales_tabledata th:hover { /* ¡Añade esta línea! */
+    /* background-color: #f8f9fc; */
+}
+
+#ot_tabledata th:hover::after,
+#clientes_tabledata th:hover::after,
+#sucursales_tabledata th:hover::after { /* ¡Añade esta línea! */
+    opacity: 0.7;
+}
+/* Asegura que el encabezado sea un contexto de posicionamiento */
+#ot_tabledata th,
+#clientes_tabledata th,
+#sucursales_tabledata th,
+#contactos_tabledata th { /* ¡Añade esta línea para la tabla de contactos! */
+    position: relative;
+    padding-right: 25px !important;
+    cursor: pointer;
+}
+
+/* Estilo base para el pseudo-elemento del icono */
+#ot_tabledata th::after,
+#clientes_tabledata th::after,
+#sucursales_tabledata th::after,
+#contactos_tabledata th::after { /* ¡Añade esta línea! */
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 0.8em;
+    opacity: 0.4;
+    transition: opacity 0.2s ease;
+}
+
+/* Icono para ordenación ascendente */
+#ot_tabledata th.sorted-asc::after,
+#clientes_tabledata th.sorted-asc::after,
+#sucursales_tabledata th.sorted-asc::after,
+#contactos_tabledata th.sorted-asc::after { /* ¡Añade esta línea! */
+    content: "\f0d8"; /* Icono 'caret-up' de Font Awesome Solid */
+    opacity: 1;
+    color: #333;
+}
+
+/* Icono para ordenación descendente */
+#ot_tabledata th.sorted-desc::after,
+#clientes_tabledata th.sorted-desc::after,
+#sucursales_tabledata th.sorted-desc::after,
+#contactos_tabledata th.sorted-desc::after { /* ¡Añade esta línea! */
+    content: "\f0d7"; /* Icono 'caret-down' de Font Awesome Solid */
+    opacity: 1;
+    color: #333;
+}
+
+/* Opcional: Icono para columnas no ordenadas, indica que son ordenables */
+#ot_tabledata th:not(.sorted-asc):not(.sorted-desc)::after,
+#clientes_tabledata th:not(.sorted-asc):not(.sorted-desc)::after,
+#sucursales_tabledata th:not(.sorted-asc):not(.sorted-desc)::after,
+#contactos_tabledata th:not(.sorted-asc):not(.sorted-desc)::after { /* ¡Añade esta línea! */
+    content: "\f0dc"; /* Icono 'sort' (flechas arriba/abajo juntas) */
+}
+
+/* Opcional: Estilo al pasar el ratón por encabezados ordenables */
+#ot_tabledata th:hover,
+#clientes_tabledata th:hover,
+#sucursales_tabledata th:hover,
+#contactos_tabledata th:hover { /* ¡Añade esta línea! */
+    /* background-color: #f8f9fc; */
+}
+
+#ot_tabledata th:hover::after,
+#clientes_tabledata th:hover::after,
+#sucursales_tabledata th:hover::after,
+#contactos_tabledata th:hover::after { /* ¡Añade esta línea! */
+    opacity: 0.7;
+}
+/* Asegura que el encabezado sea un contexto de posicionamiento */
+#ot_tabledata th,
+#clientes_tabledata th,
+#sucursales_tabledata th,
+#contactos_tabledata th,
+#servicios_tabledata th { /* ¡Añade esta línea para la tabla de servicios! */
+    position: relative;
+    padding-right: 25px !important;
+    cursor: pointer;
+}
+
+/* Estilo base para el pseudo-elemento del icono */
+#ot_tabledata th::after,
+#clientes_tabledata th::after,
+#sucursales_tabledata th::after,
+#contactos_tabledata th::after,
+#servicios_tabledata th::after { /* ¡Añade esta línea! */
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 0.8em;
+    opacity: 0.4;
+    transition: opacity 0.2s ease;
+}
+
+/* Icono para ordenación ascendente */
+#ot_tabledata th.sorted-asc::after,
+#clientes_tabledata th.sorted-asc::after,
+#sucursales_tabledata th.sorted-asc::after,
+#contactos_tabledata th.sorted-asc::after,
+#servicios_tabledata th.sorted-asc::after { /* ¡Añade esta línea! */
+    content: "\f0d8"; /* Icono 'caret-up' de Font Awesome Solid */
+    opacity: 1;
+    color: #333;
+}
+
+/* Icono para ordenación descendente */
+#ot_tabledata th.sorted-desc::after,
+#clientes_tabledata th.sorted-desc::after,
+#sucursales_tabledata th.sorted-desc::after,
+#contactos_tabledata th.sorted-desc::after,
+#servicios_tabledata th.sorted-desc::after { /* ¡Añade esta línea! */
+    content: "\f0d7"; /* Icono 'caret-down' de Font Awesome Solid */
+    opacity: 1;
+    color: #333;
+}
+
+/* Opcional: Icono para columnas no ordenadas, indica que son ordenables */
+#ot_tabledata th:not(.sorted-asc):not(.sorted-desc)::after,
+#clientes_tabledata th:not(.sorted-asc):not(.sorted-desc)::after,
+#sucursales_tabledata th:not(.sorted-asc):not(.sorted-desc)::after,
+#contactos_tabledata th:not(.sorted-asc):not(.sorted-desc)::after,
+#servicios_tabledata th:not(.sorted-asc):not(.sorted-desc)::after { /* ¡Añade esta línea! */
+    content: "\f0dc"; /* Icono 'sort' (flechas arriba/abajo juntas) */
+}
+
+/* Opcional: Estilo al pasar el ratón por encabezados ordenables */
+#ot_tabledata th:hover,
+#clientes_tabledata th:hover,
+#sucursales_tabledata th:hover,
+#contactos_tabledata th:hover,
+#servicios_tabledata th:hover { /* ¡Añade esta línea! */
+    /* background-color: #f8f9fc; */
+}
+
+#ot_tabledata th:hover::after,
+#clientes_tabledata th:hover::after,
+#sucursales_tabledata th:hover::after,
+#contactos_tabledata th:hover::after,
+#servicios_tabledata th:hover::after { /* ¡Añade esta línea! */
+    opacity: 0.7;
+}
+/* --- Estilos para la ordenación de tablas --- */
+
+/* Asegura que el encabezado sea un contexto de posicionamiento para los iconos */
+#ot_tabledata th,
+#clientes_tabledata th,
+#sucursales_tabledata th,
+#contactos_tabledata th,
+#servicios_tabledata th,
+#tareas_tabledata th { /* ¡Añadido para la tabla de tareas y otras! */
+    position: relative;
+    padding-right: 25px !important; /* Espacio para el icono */
+    cursor: pointer; /* Indica que es clickeable */
+    white-space: nowrap; /* Evita que el texto del encabezado se rompa */
+}
+
+/* Estilo base para el pseudo-elemento del icono */
+#ot_tabledata th::after,
+#clientes_tabledata th::after,
+#sucursales_tabledata th::after,
+#contactos_tabledata th::after,
+#servicios_tabledata th::after,
+#tareas_tabledata th::after {
+    content: ''; /* Contenido inicial vacío, se llena con el icono */
+    position: absolute;
+    top: 50%;
+    right: 8px; /* Posición a la derecha del encabezado */
+    transform: translateY(-50%);
+    font-family: "Font Awesome 6 Free"; /* Fuente de los iconos */
+    font-weight: 900; /* Para iconos sólidos de Font Awesome */
+    font-size: 0.8em;
+    opacity: 0.4; /* Menor opacidad cuando no está ordenado */
+    transition: opacity 0.2s ease; /* Transición suave al cambiar la opacidad */
+}
+
+/* Icono para ordenación ascendente */
+#ot_tabledata th.sorted-asc::after,
+#clientes_tabledata th.sorted-asc::after,
+#sucursales_tabledata th.sorted-asc::after,
+#contactos_tabledata th.sorted-asc::after,
+#servicios_tabledata th.sorted-asc::after,
+#tareas_tabledata th.sorted-asc::after {
+    content: "\f0d8"; /* Icono 'caret-up' de Font Awesome Solid */
+    opacity: 1; /* Opacidad completa */
+    color: #333; /* Color oscuro para el icono activo */
+}
+
+/* Icono para ordenación descendente */
+#ot_tabledata th.sorted-desc::after,
+#clientes_tabledata th.sorted-desc::after,
+#sucursales_tabledata th.sorted-desc::after,
+#contactos_tabledata th.sorted-desc::after,
+#servicios_tabledata th.sorted-desc::after,
+#tareas_tabledata th.sorted-desc::after {
+    content: "\f0d7"; /* Icono 'caret-down' de Font Awesome Solid */
+    opacity: 1; /* Opacidad completa */
+    color: #333; /* Color oscuro para el icono activo */
+}
+
+/* Icono para columnas no ordenadas, pero que son ordenables (indica la posibilidad de ordenar) */
+#ot_tabledata th:not(.sorted-asc):not(.sorted-desc)::after,
+#clientes_tabledata th:not(.sorted-asc):not(.sorted-desc)::after,
+#sucursales_tabledata th:not(.sorted-asc):not(.sorted-desc)::after,
+#contactos_tabledata th:not(.sorted-asc):not(.sorted-desc)::after,
+#servicios_tabledata th:not(.sorted-asc):not(.sorted-desc)::after,
+#tareas_tabledata th:not(.sorted-asc):not(.sorted-desc)::after {
+    content: "\f0dc"; /* Icono 'sort' (flechas arriba/abajo juntas) */
+}
+
+/* Opcional: Estilo al pasar el ratón por encima de encabezados ordenables */
+#ot_tabledata th:hover,
+#clientes_tabledata th:hover,
+#sucursales_tabledata th:hover,
+#contactos_tabledata th:hover,
+#servicios_tabledata th:hover,
+#tareas_tabledata th:hover {
+    /* Puedes añadir un color de fondo ligero al pasar el ratón */
+    /* background-color: #f8f9fc; */
+}
+
+#ot_tabledata th:hover::after,
+#clientes_tabledata th:hover::after,
+#sucursales_tabledata th:hover::after,
+#contactos_tabledata th:hover::after,
+#servicios_tabledata th:hover::after,
+#tareas_tabledata th:hover::after {
+    opacity: 0.7; /* El icono se vuelve un poco más visible al pasar el ratón */
+}
+/* --- Estilos para la ordenación de tablas --- */
+
+/* Asegura que el encabezado sea un contexto de posicionamiento para los iconos */
+#ot_tabledata th,
+#clientes_tabledata th,
+#sucursales_tabledata th,
+#contactos_tabledata th,
+#servicios_tabledata th,
+#tareas_tabledata th,
+#tecnicos_tabledata th { /* ¡Añadido para #tecnicos_tabledata! */
+    position: relative;
+    padding-right: 25px !important; /* Espacio para el icono */
+    cursor: pointer; /* Indica que es clickeable */
+    white-space: nowrap; /* Evita que el texto del encabezado se rompa */
+}
+
+/* Estilo base para el pseudo-elemento del icono */
+#ot_tabledata th::after,
+#clientes_tabledata th::after,
+#sucursales_tabledata th::after,
+#contactos_tabledata th::after,
+#servicios_tabledata th::after,
+#tareas_tabledata th::after,
+#tecnicos_tabledata th::after { /* ¡Añadido para #tecnicos_tabledata! */
+    content: ''; /* Contenido inicial vacío, se llena con el icono */
+    position: absolute;
+    top: 50%;
+    right: 8px; /* Posición a la derecha del encabezado */
+    transform: translateY(-50%);
+    font-family: "Font Awesome 6 Free"; /* Fuente de los iconos */
+    font-weight: 900; /* Para iconos sólidos de Font Awesome */
+    font-size: 0.8em;
+    opacity: 0.4; /* Menor opacidad cuando no está ordenado */
+    transition: opacity 0.2s ease; /* Transición suave al cambiar la opacidad */
+}
+
+/* Icono para ordenación ascendente */
+#ot_tabledata th.sorted-asc::after,
+#clientes_tabledata th.sorted-asc::after,
+#sucursales_tabledata th.sorted-asc::after,
+#contactos_tabledata th.sorted-asc::after,
+#servicios_tabledata th.sorted-asc::after,
+#tareas_tabledata th.sorted-asc::after,
+#tecnicos_tabledata th.sorted-asc::after { /* ¡Añadido para #tecnicos_tabledata! */
+    content: "\f0d8"; /* Icono 'caret-up' de Font Awesome Solid */
+    opacity: 1; /* Opacidad completa */
+    color: #333; /* Color oscuro para el icono activo */
+}
+
+/* Icono para ordenación descendente */
+#ot_tabledata th.sorted-desc::after,
+#clientes_tabledata th.sorted-desc::after,
+#sucursales_tabledata th.sorted-desc::after,
+#contactos_tabledata th.sorted-desc::after,
+#servicios_tabledata th.sorted-desc::after,
+#tareas_tabledata th.sorted-desc::after,
+#tecnicos_tabledata th.sorted-desc::after { /* ¡Añadido para #tecnicos_tabledata! */
+    content: "\f0d7"; /* Icono 'caret-down' de Font Awesome Solid */
+    opacity: 1; /* Opacidad completa */
+    color: #333; /* Color oscuro para el icono activo */
+}
+
+/* Icono para columnas no ordenadas, pero que son ordenables (indica la posibilidad de ordenar) */
+#ot_tabledata th:not(.sorted-asc):not(.sorted-desc)::after,
+#clientes_tabledata th:not(.sorted-asc):not(.sorted-desc)::after,
+#sucursales_tabledata th:not(.sorted-asc):not(.sorted-desc)::after,
+#contactos_tabledata th:not(.sorted-asc):not(.sorted-desc)::after,
+#servicios_tabledata th:not(.sorted-asc):not(.sorted-desc)::after,
+#tareas_tabledata th:not(.sorted-asc):not(.sorted-desc)::after,
+#tecnicos_tabledata th:not(.sorted-asc):not(.sorted-desc)::after { /* ¡Añadido para #tecnicos_tabledata! */
+    content: "\f0dc"; /* Icono 'sort' (flechas arriba/abajo juntas) */
+}
+
+/* Opcional: Estilo al pasar el ratón por encima de encabezados ordenables */
+#ot_tabledata th:hover,
+#clientes_tabledata th:hover,
+#sucursales_tabledata th:hover,
+#contactos_tabledata th:hover,
+#servicios_tabledata th:hover,
+#tareas_tabledata th:hover,
+#tecnicos_tabledata th:hover { /* ¡Añadido para #tecnicos_tabledata! */
+    /* Puedes añadir un color de fondo ligero al pasar el ratón */
+    /* background-color: #f8f9fc; */
+}
+
+#ot_tabledata th:hover::after,
+#clientes_tabledata th:hover::after,
+#sucursales_tabledata th:hover::after,
+#contactos_tabledata th:hover::after,
+#servicios_tabledata th:hover::after,
+#tareas_tabledata th:hover::after,
+#tecnicos_tabledata th:hover::after { /* ¡Añadido para #tecnicos_tabledata! */
+    opacity: 0.7; /* El icono se vuelve un poco más visible al pasar el ratón */
+}
+/* Aplica a cualquier tabla con la clase 'sortable-table' */
+.sortable-table th {
+    position: relative;
+    padding-right: 25px !important;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.sortable-table th::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 0.8em;
+    opacity: 0.4;
+    transition: opacity 0.2s ease;
+}
+
+.sortable-table th.sorted-asc::after {
+    content: "\f0d8"; /* caret-up */
+    opacity: 1;
+    color: #333;
+}
+
+.sortable-table th.sorted-desc::after {
+    content: "\f0d7"; /* caret-down */
+    opacity: 1;
+    color: #333;
+}
+
+.sortable-table th:not(.sorted-asc):not(.sorted-desc)::after {
+    content: "\f0dc"; /* sort (flechas arriba/abajo juntas) */
+}
+
+/* Opcional: Estilo al pasar el ratón por encima de encabezados ordenables */
+.sortable-table th:hover::after {
+    opacity: 0.7;
+}
+
+.pagination-scroll-container {
+    overflow-x: auto; /* Permite el scroll horizontal si el contenido es más ancho que el contenedor */
+    -webkit-overflow-scrolling: touch; /* Mejora el rendimiento del scroll en iOS */
+    padding-bottom: 10px; /* Opcional: Añade un poco de padding inferior para que la barra de scroll no cubra los números */
+    margin-top: 15px; /* Opcional: Un margen superior para separarlo de la tabla */
+    display: flex; /* Para que el scroll funcione correctamente y el contenido no salte de línea */
+    justify-content: center; /* Para centrar la paginación dentro del área de scroll si hay espacio */
+}
+
+/* Opcional: Ajustes para los ítems de paginación dentro del contenedor en móviles */
+@media (max-width: 575.98px) { /* Esto apunta a pantallas extra pequeñas (xs) de Bootstrap */
+    .pagination-scroll-container .pagination {
+        flex-wrap: nowrap; /* Asegura que no se envuelva, forzando el scroll */
+        justify-content: flex-start; /* Alinea al inicio para que el scroll empiece desde ahí */
+    }
+
+    .pagination-scroll-container .page-item {
+        flex-shrink: 0; /* Evita que los ítems de paginación se encojan en pantallas muy pequeñas */
+    }
+
+    .pagination-scroll-container .page-link {
+        padding: .5rem .75rem; /* Ajusta el padding para botones más pequeños */
+        font-size: .875rem; /* Reduce el tamaño de fuente */
+    }
+}
